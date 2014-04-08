@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Demo: hotSpot()</title>
+        <meta charset="utf-8" />
+        <style>
+            .promo {
+                padding: 10px;
+                border: 1px solid;
+            }
+            .promo img {
+                border: 3px solid;
+            }
+            .promo a:hover,
+            .promo a:focus,
+            .promo.hotSpot_over a,
+            .promo.hotSpot_over h2 {
+                text-decoration: underline;
+                color: #007642;
+                cursor: pointer;
+            }
+            .promo.hotSpot_over img {
+                border-color: #007642;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>hotSpot demo</h1>
+        <h2>using hotSpot to give the illusion that multiple elements are wrapped in a hyperlink</h2>
+        <p>Mouse over or focus an element within the box to see all elements react</p>
+        <div class="promo">
+            <h2>
+                <a href="/first-link">Focusing on the future</a>
+            </h2>
+            <div class="img-liner">
+                <img alt="Image which should function as a faux link. " src="http://placehold.it/220x132" />
+            </div>
+            <div class="liner">
+                <p>The 2013 Review of Retirement Income Policies has been released.</p>
+                <p class="more">
+                    <a aria-describedby="retirement-income-policy-review-document-promo" href="/another-link">Find out more</a>
+                </p>
+            </div>
+        </div>
+        <!-- /.promo-->
+
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="../dist/ct-jquery-hotSpot.js"></script>
+        <script>
+            if ( typeof $.fn.hotSpot !== undefined ) {
+
+                var $hotSpots = $('.promo');
+
+                if ( $hotSpots.length ) {
+
+                    $hotSpots.hotSpot({
+                        hotSpot_children: 'h2, h3, h4, h5, h6, img'
+                    });
+
+                    // patch for IE6
+                    /*
+                    if (cflri_ui.tests.is_ie6) {
+
+                        $hotSpots.find('.img-liner').hover(
+                            function () {
+                                $(this).addClass("ie-on");
+                            },
+                            function () {
+                                $(this).removeClass("ie-on");
+                            });
+                    }
+                    */
+                }
+
+                $('.container').hotSpot();
+            }
+        </script>
+    </body>
+</html>
