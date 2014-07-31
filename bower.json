@@ -1,0 +1,28 @@
+{
+  "name": "ct-jquery-hotSpot",
+  "description": "A plugin to give the illusion that multiple elements are wrapped in a hyperlink",
+  "version": "1.0.0",
+  "main": "dist",
+  "license": "All rights reserved",
+  "keywords": [],
+  "authors": [
+    {
+      "name": "Dan Smith",
+      "email": "dan.smith@chrometoaster.com"
+    }
+  ],
+  "homepage": "http://github.com/chrometoasters/ct-jquery-hotSpot",
+  "repository": {
+    "type": "github",
+    "url": "http://github.com/chrometoasters/ct-jquery-hotSpot.git"
+  },
+  "dependencies": {
+    "jquery": "1.10.1"
+  },
+  "devDependencies": {},
+  "private": true,
+  "ignore": [
+    "bower_components/",
+    "demos/"
+  ]
+}
